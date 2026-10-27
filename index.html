@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>La política es mi cuento</title>
+
+    <!-- ARCHIVO CSS EXTERNO -->
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         ENCABEZADO
+    ====================================== -->
+
+    <header>
+
+        <div class="emoji">
+            🗳️
+        </div>
+
+        <div class="mini-titulo">
+            REVISTA DIGITAL CIUDADANA
+        </div>
+
+        <h1>
+            La política es mi cuento
+        </h1>
+
+        <p>
+            Aprende, pregunta, opina y participa.
+        </p>
+
+    </header>
+
+
+    <!-- =====================================
+         MENÚ
+    ====================================== -->
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html" class="activo">
+                    🏠 Inicio
+                </a>
+            </li>
+
+            <li>
+                <a href="politica.html">
+                    🔎 Descubre la política
+                </a>
+            </li>
+
+            <li>
+                <a href="glosario.html">
+                    📚 Glosario
+                </a>
+            </li>
+
+            <li>
+                <a href="encuesta.html">
+                    🎯 Encuesta
+                </a>
+            </li>
+
+            <li>
+                <a href="conclusion.html">
+                    ✅ Conclusión
+                </a>
+            </li>
+
+            <li>
+                <a href="contacto.html">
+                    📩 Contacto
+                </a>
+
+            </li>
+            
+            <li>
+                <a href="registro.php">
+                    Registrarse
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =====================================
+         CONTENIDO PRINCIPAL
+    ====================================== -->
+
+    <main class="contenedor">
+
+
+        <!-- =================================
+             BIENVENIDA
+        ================================== -->
+
+        <section class="bienvenida">
+
+
+            <h2>
+                ¡La política también es cosa de jóvenes!
+            </h2>
+
+            <p>
+                Un espacio creado para aprender sobre política,
+                democracia y ciudadanía de una manera sencilla,
+                entretenida y fácil de entender.
+            </p>
+
+        </section>
+
+
+        <!-- =================================
+             TEMA DESTACADO
+        ================================== -->
+
+        <section class="principal">
+
+            <img
+                src="imagenes/politica.png"
+                class="imagen-principal"
+                alt="Imagen relacionada con la política"
+            >
+
+            <div class="principal-texto">
+
+                <div class="etiqueta">
+                    ⭐ TEMA DESTACADO
+                </div>
+
+                <h2>
+                    Descubre la política de una manera diferente
+                </h2>
+
+                <p>
+                    ¿Qué es la política? ¿Qué tiene que ver con
+                    la democracia? ¿Cómo funcionan las elecciones?
+                    ¿Qué significa ser ciudadano?
+                </p>
+
+                <p>
+                    Aquí encontrarás información sencilla para
+                    comprender cómo las decisiones públicas hacen
+                    parte de nuestra vida cotidiana.
+                </p>
+
+                <a
+                    href="politica.html"
+                    class="boton"
+                >
+                    DESCUBRIR MÁS →
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+    
+
+
+    <!-- =====================================
+         PIE DE PÁGINA
+    ====================================== -->
+
+    <footer>
+
+        <h2>
+            🗳️ La política es mi cuento
+        </h2>
+
+        <p>
+            Revista Digital Ciudadana · 2026
+        </p>
+
+        <p>
+            Aprende · Participa · Opina
+        </p>
+
+    </footer>
+   <!-- CUADRO DE BIENVENIDA DESPUÉS DEL REGISTRO -->
+<style>
+    #cuadroBienvenida {
+        display: none;
+        position: fixed;
+        right: 25px;
+        bottom: 25px;
+        width: 310px;
+        max-width: calc(100vw - 40px);
+        box-sizing: border-box;
+        padding: 22px;
+        background: #fff;
+        color: #333;
+        border-top: 5px solid #286c91;
+        border-radius: 16px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.20);
+        z-index: 99999;
+        font-family: Arial, sans-serif;
+        animation: aparecerCuadro 0.4s ease;
+    }
+
+    #cuadroBienvenida .cerrar {
+        position: absolute;
+        top: 8px;
+        right: 12px;
+        border: none;
+        background: transparent;
+        color: #666;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    #cuadroBienvenida .icono {
+        font-size: 30px;
+    }
+
+    #cuadroBienvenida h3 {
+        margin: 8px 20px 10px 0;
+        color: #286c91;
+        font-size: 19px;
+    }
+
+    #cuadroBienvenida p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    #cuadroBienvenida .aceptar {
+        margin-top: 10px;
+        padding: 10px 15px;
+        background: #286c91;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    #cuadroBienvenida .aceptar:hover {
+        background: #1d506d;
+    }
+
+    @keyframes aparecerCuadro {
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 480px) {
+        #cuadroBienvenida {
+            right: 15px;
+            bottom: 15px;
+        }
+    }
+</style>
+
+<div id="cuadroBienvenida" role="dialog"
+     aria-labelledby="tituloBienvenida"
+     aria-modal="false">
+
+    <button type="button" class="cerrar"
+            onclick="cerrarBienvenida()"
+            aria-label="Cerrar cuadro">×</button>
+
+    <div class="icono">🗳️</div>
+
+    <h3 id="tituloBienvenida">¡Registro exitoso!</h3>
+
+    <p>
+        ¡Bienvenido a <strong>La política es mi cuento</strong>!
+        Tu participación es importante. Aprende, pregunta,
+        opina y participa.
+    </p>
+
+    <button type="button" class="aceptar"
+            onclick="cerrarBienvenida()">
+        ¡Entendido!
+    </button>
+</div>
+
+<script>
+    function cerrarBienvenida() {
+        document.getElementById("cuadroBienvenida").style.display = "none";
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const parametros = new URLSearchParams(window.location.search);
+
+        if (parametros.get("registro") === "exitoso") {
+            document.getElementById("cuadroBienvenida").style.display = "block";
+
+            // Quita el parámetro de la dirección para que
+            // el mensaje no vuelva a aparecer al actualizar.
+            window.history.replaceState(
+                {},
+                document.title,
+                window.location.pathname + window.location.hash
+            );
+        }
+    });
+</script>
+</body>
+
+</html>
+
+
+</body>
+
+</html>

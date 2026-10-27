@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contacto | La política es mi cuento</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+    <style>
+
+        /* =====================================
+           CONTACTOS
+        ===================================== */
+
+        .contactos {
+            width: 100%;
+            max-width: 1350px;
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            align-items: stretch;
+        }
+
+        .tarjeta-contacto {
+            background-color: white;
+            border-radius: 20px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tarjeta-contacto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+        }
+
+        /* =====================================
+           FOTOS
+        ===================================== */
+
+        .foto-contacto {
+            width: 135px;
+            height: 135px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #092c70;
+            margin-bottom: 15px;
+        }
+
+        /* =====================================
+           NOMBRES
+        ===================================== */
+
+        .tarjeta-contacto h3 {
+            color: #092c70;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        /* =====================================
+           CARGOS
+        ===================================== */
+
+        .tarjeta-contacto .cargo {
+            display: inline-block;
+            background-color: #092c70;
+            color: white;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        /* =====================================
+           INFORMACIÓN
+        ===================================== */
+
+        .tarjeta-contacto .informacion {
+            width: 100%;
+            background-color: #f8f3df;
+            border-radius: 15px;
+            padding: 15px;
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .tarjeta-contacto .informacion p {
+            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+
+        .tarjeta-contacto .informacion strong {
+            color: #092c70;
+        }
+
+        /* =====================================
+           BOTÓN
+        ===================================== */
+
+        .tarjeta-contacto .boton-contacto {
+            display: inline-block;
+            background-color: #092c70;
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: 18px;
+        }
+
+        .tarjeta-contacto .boton-contacto:hover {
+            background-color: #164ba0;
+        }
+
+        /* =====================================
+           MENSAJE FINAL
+        ===================================== */
+
+        .destacado {
+            width: 100%;
+            max-width: 1350px;
+            margin: 35px auto;
+            background-color: #092c70;
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .destacado h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 12px;
+        }
+
+        .destacado p {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+
+        /* =====================================
+           FORMULARIO
+        ===================================== */
+
+        .formulario-contacto {
+            width: 90%;
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+        }
+
+        .formulario-contacto h2 {
+            text-align: center;
+            color: #092c70;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .formulario-contacto .subtitulo {
+            text-align: center;
+            color: #555;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 25px;
+        }
+
+        .formulario-contacto table {
+            width: 100%;
+            border-spacing: 0 12px;
+        }
+
+        .formulario-contacto td:first-child {
+            width: 30%;
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        .formulario-contacto td:last-child {
+            width: 70%;
+        }
+
+        .formulario-contacto label {
+            color: #092c70;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .formulario-contacto input[type="text"],
+        .formulario-contacto input[type="email"],
+        .formulario-contacto input[type="number"],
+        .formulario-contacto select,
+        .formulario-contacto textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        .formulario-contacto input:focus,
+        .formulario-contacto select:focus,
+        .formulario-contacto textarea:focus {
+            outline: none;
+            border-color: #164ba0;
+        }
+
+        .formulario-contacto textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .formulario-contacto input[type="radio"],
+        .formulario-contacto input[type="checkbox"] {
+            accent-color: #164ba0;
+            margin: 4px;
+        }
+
+        .formulario-contacto .botones {
+            text-align: center;
+            padding-top: 15px;
+        }
+
+        .formulario-contacto input[type="submit"],
+        .formulario-contacto input[type="reset"] {
+            border: none;
+            padding: 11px 25px;
+            border-radius: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .formulario-contacto input[type="submit"] {
+            background-color: #164ba0;
+            color: white;
+        }
+
+        .formulario-contacto input[type="reset"] {
+            background-color: #e63946;
+            color: white;
+        }
+
+        /* =====================================
+           MAPA
+        ===================================== */
+
+        .mapa-contenedor {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .mapa-contenedor h2 {
+            color: #092c70;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .mapa-contenedor p {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #555;
+            margin-bottom: 18px;
+        }
+
+        .mapa {
+            background-color: white;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+        }
+
+        .mapa a {
+            display: block;
+            text-decoration: none;
+        }
+
+        .mapa iframe {
+            width: 100%;
+            height: 320px;
+            border: 0;
+            border-radius: 15px;
+
+            /* Permite hacer clic en todo el mapa */
+            pointer-events: none;
+        }
+
+        .boton-mapa {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: #092c70;
+            color: white;
+            padding: 11px 22px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .boton-mapa:hover {
+            background-color: #164ba0;
+        }
+
+        /* =====================================
+           TABLET
+        ===================================== */
+
+        @media (max-width: 1100px) {
+
+            .contactos {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 850px;
+            }
+
+        }
+
+        /* =====================================
+           CELULAR
+        ===================================== */
+
+        @media (max-width: 650px) {
+
+            .contactos {
+                grid-template-columns: 1fr;
+                width: 92%;
+            }
+
+            .tarjeta-contacto {
+                width: 100%;
+            }
+
+            .formulario-contacto {
+                width: 92%;
+                padding: 20px;
+            }
+
+            .formulario-contacto table,
+            .formulario-contacto tr,
+            .formulario-contacto td {
+                display: block;
+                width: 100%;
+            }
+
+            .formulario-contacto td:first-child {
+                text-align: left;
+                padding-right: 0;
+                padding-bottom: 5px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     ENCABEZADO
+====================================== -->
+
+<header>
+
+    <div class="emoji">
+        🗳️
+    </div>
+
+    <div class="mini-titulo">
+        REVISTA DIGITAL CIUDADANA
+    </div>
+
+    <h1>
+        La política es mi cuento
+    </h1>
+
+    <p>
+        Aprende, pregunta, opina y participa.
+    </p>
+
+</header>
+
+
+<!-- =====================================
+     MENÚ
+====================================== -->
+
+<nav>
+
+    <ul>
+
+        <li>
+            <a href="index.html">
+                🏠 Inicio
+            </a>
+        </li>
+
+        <li>
+            <a href="politica.html">
+                🔎 Descubre la política
+            </a>
+        </li>
+
+        <li>
+            <a href="glosario.html">
+                📚 Glosario
+            </a>
+        </li>
+
+        <li>
+            <a href="encuesta.html">
+                🎯 Encuesta
+            </a>
+        </li>
+
+        <li>
+            <a href="conclusion.html">
+                ✅ Conclusión
+            </a>
+        </li>
+
+        <li>
+            <a href="contacto.html" class="activo">
+                📩 Contacto
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- =====================================
+     CONTENIDO
+====================================== -->
+
+<main class="contenedor">
+
+
+    <!-- PRESENTACIÓN -->
+
+    <section class="bienvenida">
+
+        <h2>
+            📩 Conoce a nuestro equipo
+        </h2>
+
+        <p>
+            Somos estudiantes que creamos este proyecto
+            para aprender y compartir información sobre
+            política, democracia y ciudadanía.
+        </p>
+
+        <p>
+            Si tienes alguna pregunta, sugerencia o comentario
+            sobre nuestro proyecto, puedes comunicarte con
+            cualquiera de nuestros integrantes.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================
+         CONTACTOS
+    ====================================== -->
+
+    <section class="contactos">
+
+
+        <!-- SHARAY -->
+
+        <div class="tarjeta-contacto">
+
+            <img
+                src="imagenes/Sharay.jpeg"
+                class="foto-contacto"
+                alt="Foto de Sharay Patiño">
+
+            <h3>
+                Sharay Patiño
+            </h3>
+
+            <span class="cargo">
+                DISEÑADORA UI/UX
+            </span>
+
+            <div class="informacion">
+
+                <p>
+                    <strong>🎨 Función:</strong><br>
+                    Diseño de la interfaz, colores,
+                    imágenes y experiencia del usuario.
+                </p>
+
+                <p>
+                    <strong>📧 Correo:</strong><br>
+                    patinop.sharay@dinamarca.edu.co
+                </p>
+
+                <p>
+                    <strong>📱 Teléfono:</strong><br>
+                    301 797 9510
+                </p>
+
+            </div>
+
+            <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=patinop.sharay@dinamarca.edu.co&su=Pregunta%20sobre%20La%20politica%20es%20mi%20cuento"
+                target="_blank"
+                class="boton-contacto">
+
+                📧 Escribir
+
+            </a>
+
+        </div>
+
+
+        <!-- JUAN PABLO -->
+
+        <div class="tarjeta-contacto">
+
+            <img
+                src="imagenes/Pablo.jpeg"
+                class="foto-contacto"
+                alt="Foto de Juan Pablo Valencia">
+
+            <h3>
+                Juan Pablo Valencia
+            </h3>
+
+            <span class="cargo">
+                DESARROLLADOR FRONTEND
+            </span>
+
+            <div class="informacion">
+
+                <p>
+                    <strong>💻 Función:</strong><br>
+                    Desarrollo de la parte visual
+                    y estructura de la página web.
+                </p>
+
+                <p>
+                    <strong>📧 Correo:</strong><br>
+                    valencia.juan3@dinamarca.edu.co
+                </p>
+
+                <p>
+                    <strong>📱 Teléfono:</strong><br>
+                    304 349 7464
+                </p>
+
+            </div>
+
+            <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=valencia.juan3@dinamarca.edu.co&su=Pregunta%20sobre%20La%20politica%20es%20mi%20cuento"
+                target="_blank"
+                class="boton-contacto">
+
+                📧 Escribir
+
+            </a>
+
+        </div>
+
+
+        <!-- EMMANUEL -->
+
+        <div class="tarjeta-contacto">
+
+            <img
+                src="imagenes/Valdes.jpeg"
+                class="foto-contacto"
+                alt="Foto de Emmanuel Valdes">
+
+            <h3>
+                Emmanuel Valdes
+            </h3>
+
+            <span class="cargo">
+                DESARROLLADOR BACKEND
+            </span>
+
+            <div class="informacion">
+
+                <p>
+                    <strong>⚙️ Función:</strong><br>
+                    Programación del funcionamiento
+                    interno del proyecto.
+                </p>
+
+                <p>
+                    <strong>📧 Correo:</strong><br>
+                    valdes.emmanuel@dinamarca.edu.co
+                </p>
+
+                <p>
+                    <strong>📱 Teléfono:</strong><br>
+                    313 546 4230
+                </p>
+
+            </div>
+
+            <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=valdes.emmanuel@dinamarca.edu.co&su=Pregunta%20sobre%20La%20politica%20es%20mi%20cuento"
+                target="_blank"
+                class="boton-contacto">
+
+                📧 Escribir
+
+            </a>
+
+        </div>
+
+
+        <!-- MICHEL -->
+
+        <div class="tarjeta-contacto">
+
+            <img
+                src="imagenes/Michel.jpeg"
+                class="foto-contacto"
+                alt="Foto de Michel Acevedo">
+
+            <h3>
+                Michel Acevedo
+            </h3>
+
+            <span class="cargo">
+                TESTER Y DOCUMENTADORA
+            </span>
+
+            <div class="informacion">
+
+                <p>
+                    <strong>🧪 Función:</strong><br>
+                    Realiza pruebas, encuentra errores
+                    y organiza la documentación.
+                </p>
+
+                <p>
+                    <strong>📧 Correo:</strong><br>
+                    acevedo.michel@dinamarca.edu.co
+                </p>
+
+                <p>
+                    <strong>📱 Teléfono:</strong><br>
+                    319 508 1898
+                </p>
+
+            </div>
+
+            <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=acevedo.michel@dinamarca.edu.co&su=Pregunta%20sobre%20La%20politica%20es%20mi%20cuento"
+                target="_blank"
+                class="boton-contacto">
+
+                📧 Escribir
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FORMULARIO
+    ====================================== -->
+
+    <section class="formulario-contacto">
+
+        <h2>
+            🗳️ ¿Tienes alguna pregunta?
+        </h2>
+
+        <p class="subtitulo">
+            Escríbenos y comparte tu opinión sobre política,
+            democracia y ciudadanía.
+        </p>
+
+        <form action="guardar_contacto.php" method="POST">
+
+            <table>
+
+                <tr>
+                    <td>
+                        <label for="nombre">
+                            Nombre:
+                        </label>
+                    </td>
+
+                    <td>
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            placeholder="Escribe tu nombre"
+                            required>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <label for="email">
+                            Correo:
+                        </label>
+                    </td>
+
+                    <td>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="correo@ejemplo.com"
+                            required>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <label for="Grado">
+                            Grado:
+                        </label>
+                    </td>
+
+                    <td>
+                        <input
+                            type="number"
+                            id="Grado"
+                            name="Grado"
+                            placeholder="Escribe tu grado"
+                            min="1"
+                            max="12">
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <label for="tema">
+                            Tema:
+                        </label>
+                    </td>
+
+                    <td>
+                        <select
+                            id="tema"
+                            name="tema">
+
+                            <option value="">
+                                Selecciona un tema
+                            </option>
+
+                            <option value="politica">
+                                Política
+                            </option>
+
+                            <option value="democracia">
+                                Democracia
+                            </option>
+
+                            <option value="elecciones">
+                                Elecciones
+                            </option>
+
+                            <option value="ciudadania">
+                                Ciudadanía
+                            </option>
+
+                        </select>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <label for="opinion">
+                            Tu opinión:
+                        </label>
+                    </td>
+
+                    <td>
+                        <textarea
+                            id="opinion"
+                            name="opinion"
+                            placeholder="Escribe tu pregunta u opinión aquí..."
+                            required></textarea>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <label>
+                            Género:
+                        </label>
+                    </td>
+
+                    <td>
+
+                        <input
+                            type="radio"
+                            id="Hombre"
+                            name="genero"
+                            value="Hombre">
+
+                        <label for="Hombre">
+                            Hombre
+                        </label>
+
+                        <input
+                            type="radio"
+                            id="Mujer"
+                            name="genero"
+                            value="Mujer">
+
+                        <label for="Mujer">
+                            Mujer
+                        </label>
+
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <label>
+                            Me interesa:
+                        </label>
+                    </td>
+
+                    <td>
+
+                        <input
+                            type="checkbox"
+                            id="interes-politica"
+                            name="interes[]"
+                            value="politica">
+
+                        <label for="interes-politica">
+                            Política
+                        </label>
+
+                        <br>
+
+                        <input
+                            type="checkbox"
+                            id="interes-democracia"
+                            name="interes[]"
+                            value="democracia">
+
+                        <label for="interes-democracia">
+                            Democracia
+                        </label>
+
+                        <br>
+
+                        <input
+                            type="checkbox"
+                            id="interes-ciudadania"
+                            name="interes[]"
+                            value="ciudadania">
+
+                        <label for="interes-ciudadania">
+                            Ciudadanía
+                        </label>
+
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td colspan="2" class="botones">
+
+                        <input
+                            type="submit"
+                            value="📨 Enviar">
+
+                        <input
+                            type="reset"
+                            value="🗑️ Limpiar">
+
+                    </td>
+                </tr>
+
+            </table>
+
+        </form>
+
+    </section>
+
+
+    <!-- =====================================
+         MAPA
+    ====================================== -->
+
+    <section class="mapa-contenedor">
+
+        <h2>
+            📍 Encuéntranos
+        </h2>
+
+        <p>
+            Haz clic en el mapa para abrir Google Maps
+            y consultar la ubicación.
+        </p>
+
+        <div class="mapa">
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Institución+Educativa+Dinamarca,+Medellín,+Colombia"
+                target="_blank">
+
+                <iframe
+                    src="https://www.google.com/maps?q=Institución+Educativa+Dinamarca,+Medellín,+Colombia&output=embed"
+                    loading="lazy">
+                </iframe>
+
+            </a>
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Institución+Educativa+Dinamarca,+Medellín,+Colombia"
+                target="_blank"
+                class="boton-mapa">
+
+                📍 Abrir en Google Maps
+
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================
+     PIE DE PÁGINA
+====================================== -->
+
+<footer>
+
+    <h2>
+        🗳️ La política es mi cuento
+    </h2>
+
+    <p>
+        Revista Digital Ciudadana · 2026
+    </p>
+
+    <p>
+        Aprende · Participa · Opina
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>La política es mi cuento</title>
+
+    <style>
+
+        /* =====================================
+           CONFIGURACIÓN GENERAL
+        ===================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f8f3df;
+            color: #102a5c;
+            font-family: Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =====================================
+           ENCABEZADO
+        ===================================== */
+
+        header {
+            background: linear-gradient(135deg, #092c70, #164ba0);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        .emoji {
+            font-size: 40px;
+            margin-bottom: 8px;
+        }
+
+        .mini-titulo {
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: #ffd84d;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 15px;
+            color: #e9efff;
+        }
+
+
+        /* =====================================
+           MENÚ
+        ===================================== */
+
+        nav {
+            background-color: white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+
+        nav a {
+            display: block;
+            padding: 16px 22px;
+            color: #092c70;
+            font-weight: bold;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ffd84d;
+            color: #092c70;
+        }
+
+
+        /* =====================================
+           CONTENEDOR
+        ===================================== */
+
+        .contenedor {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        main {
+            padding: 40px 0;
+        }
+
+
+        /* =====================================
+           BIENVENIDA
+        ===================================== */
+
+        .bienvenida {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .bienvenida span {
+            display: inline-block;
+            background-color: #e63946;
+            color: white;
+            padding: 7px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .bienvenida h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .bienvenida p {
+            color: #59677b;
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+
+        /* =====================================
+           NOTICIA PRINCIPAL
+        ===================================== */
+
+        .principal {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+            background-color: white;
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+            margin-bottom: 40px;
+        }
+
+        .imagen-principal {
+            width: 100%;
+            height: 290px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .principal-texto .etiqueta {
+            color: #e63946;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .principal-texto h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 30px;
+            margin: 10px 0;
+        }
+
+        .principal-texto p {
+            color: #59677b;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .boton {
+            display: inline-block;
+            background-color: #092c70;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            background-color: #e63946;
+            transform: scale(1.05);
+        }
+
+
+        /* =====================================
+           TARJETAS
+        ===================================== */
+
+        .titulo-seccion {
+            text-align: center;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .tarjetas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 45px;
+        }
+
+        .tarjeta {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+            transition: 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+        }
+
+        .tarjeta img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .tarjeta-contenido {
+            padding: 20px;
+        }
+
+        .tarjeta h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .tarjeta p {
+            color: #59677b;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .tarjeta a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #e63946;
+            font-weight: bold;
+        }
+
+
+        /* =====================================
+           MENSAJE DESTACADO
+        ===================================== */
+
+        .destacado {
+            background: linear-gradient(135deg, #ffd84d, #ffca28);
+            color: #092c70;
+            border-radius: 18px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+        }
+
+        .destacado h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .destacado p {
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+
+        /* =====================================
+           SECCIONES
+        ===================================== */
+
+        .seccion {
+            margin-bottom: 50px;
+            scroll-margin-top: 80px;
+        }
+
+        .seccion-titulo {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .informacion {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+        }
+
+        .informacion h3 {
+            color: #092c70;
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+
+        .informacion p {
+            color: #59677b;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+
+        /* =====================================
+           IMAGEN DENTRO DE SECCIONES
+        ===================================== */
+
+        .contenido-imagen {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .contenido-imagen img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+
+        /* =====================================
+           GLOSARIO
+        ===================================== */
+
+        .glosario {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .concepto {
+            background-color: white;
+            border-left: 6px solid #e63946;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .concepto h3 {
+            color: #092c70;
+            margin-bottom: 8px;
+        }
+
+        .concepto p {
+            color: #59677b;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+
+        /* =====================================
+           CONTACTO
+        ===================================== */
+
+        .contacto {
+            background-color: white;
+            max-width: 700px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .contacto label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #092c70;
+        }
+
+        .contacto input,
+        .contacto textarea {
+            width: 100%;
+            padding: 13px;
+            border: 2px solid #e1e5ec;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .contacto input:focus,
+        .contacto textarea:focus {
+            border-color: #092c70;
+        }
+
+        .contacto textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        .contacto button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 14px;
+            border: none;
+            border-radius: 25px;
+            background-color: #092c70;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contacto button:hover {
+            background-color: #e63946;
+        }
+
+        #respuesta {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #dff5df;
+            color: #277027;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+
+        /* =====================================
+           PIE DE PÁGINA
+        ===================================== */
+
+        footer {
+            background-color: #092c70;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        footer h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #dce5ff;
+            margin: 5px;
+        }
+
+
+        /* =====================================
+           RESPONSIVE
+        ===================================== */
+
+        @media (max-width: 750px) {
+
+            header h1 {
+                font-size: 35px;
+            }
+
+            .principal {
+                grid-template-columns: 1fr;
+            }
+
+            .tarjetas {
+                grid-template-columns: 1fr;
+            }
+
+            .glosario {
+                grid-template-columns: 1fr;
+            }
+
+            .contenido-imagen {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                padding: 12px 10px;
+                font-size: 11px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         ENCABEZADO
+    ====================================== -->
+
+    <header>
+
+        <div class="emoji">
+            🗳️
+        </div>
+
+        <div class="mini-titulo">
+            REVISTA DIGITAL CIUDADANA
+        </div>
+
+        <h1>
+            La política es mi cuento
+        </h1>
+
+        <p>
+            Aprende, pregunta, opina y participa.
+        </p>
+
+    </header>
+
+
+    <!-- =====================================
+         MENÚ
+    ====================================== -->
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="#inicio">
+                    🏠 Inicio
+                </a>
+            </li>
+
+            <li>
+                <a href="#analisis">
+                    🔎 Descubre la política
+                </a>
+            </li>
+
+            <li>
+                <a href="#conclusion">
+                    ✅ Conclusión
+                </a>
+            </li>
+
+            <li>
+                <a href="#glosario">
+                    📚 Glosario
+                </a>
+            </li>
+
+            <li>
+                <a href="#contacto">
+                    📩 Contacto
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =====================================
+         CONTENIDO PRINCIPAL
+    ====================================== -->
+
+    <main class="contenedor" id="inicio">
+
+
+        <!-- BIENVENIDA -->
+
+        <section class="bienvenida">
+
+            <span>
+                EDICIÓN 2026
+            </span>
+
+            <h2>
+                ¡La política también es cosa de jóvenes!
+            </h2>
+
+            <p>
+                Un espacio creado para aprender sobre política,
+                democracia y ciudadanía de una manera sencilla,
+                entretenida y fácil de entender.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================
+             NOTICIA PRINCIPAL
+        ====================================== -->
+
+        <section class="principal">
+
+
+            <img
+                src="imagenes/politica.png"
+                alt="Imagen relacionada con la política"
+                class="imagen-principal"
+            >
+
+
+            <div class="principal-texto">
+
+                <div class="etiqueta">
+                    ⭐ TEMA DESTACADO
+                </div>
+
+                <h2>
+                    Descubre la política de una manera diferente
+                </h2>
+
+                <p>
+                    ¿Qué es la política? ¿Qué tiene que ver con
+                    la democracia? ¿Cómo funcionan las elecciones?
+                    ¿Qué significa ser ciudadano?
+
+                    <br><br>
+
+                    En “La política es mi cuento” encontrarás
+                    respuestas sencillas para comprender cómo
+                    las decisiones públicas hacen parte de nuestra
+                    vida cotidiana.
+                </p>
+
+                <a href="#analisis" class="boton">
+                    DESCUBRIR MÁS →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             TARJETAS
+        ====================================== -->
+
+        <h2 class="titulo-seccion">
+            Explora la política 👇
+        </h2>
+
+
+        <section class="tarjetas">
+
+
+            <!-- DEMOCRACIA -->
+
+            <article class="tarjeta">
+
+                <img
+                    src="imagenes/Democracia.png"
+                    alt="Imagen sobre democracia"
+                >
+
+                <div class="tarjeta-contenido">
+
+                    <h3>
+                        🗳️ Democracia
+                    </h3>
+
+                    <p>
+                        Conoce qué es la democracia y por qué
+                        permite la participación de los ciudadanos
+                        en las decisiones de la sociedad.
+                    </p>
+
+                    <a href="#democracia">
+                        APRENDER →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ELECCIONES -->
+
+            <article class="tarjeta">
+
+                <img
+                    src="imagenes/elecciones.png"
+                    alt="Imagen sobre elecciones"
+                >
+
+                <div class="tarjeta-contenido">
+
+                    <h3>
+                        📊 Elecciones
+                    </h3>
+
+                    <p>
+                        Aprende cómo funcionan las elecciones
+                        y por qué el voto es una forma importante
+                        de participación ciudadana.
+                    </p>
+
+                    <a href="#elecciones">
+                        APRENDER →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- CIUDADANÍA -->
+
+            <article class="tarjeta">
+
+                <img
+                    src="imagenes/Ciudadania.png"
+                    alt="Imagen sobre ciudadanía"
+                >
+
+                <div class="tarjeta-contenido">
+
+                    <h3>
+                        👥 Ciudadanía
+                    </h3>
+
+                    <p>
+                        Descubre nuestros derechos, deberes y
+                        diferentes formas de participar en nuestra
+                        comunidad.
+                    </p>
+
+                    <a href="#ciudadania">
+                        APRENDER →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+        <!-- =====================================
+             FRASE DESTACADA
+        ====================================== -->
+
+        <section class="destacado">
+
+            <h2>
+                💡 Tu opinión también cuenta
+            </h2>
+
+            <p>
+                Informarse es el primer paso para participar.
+                Pregunta, investiga, escucha diferentes opiniones
+                y construye tus propias ideas.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================
+             DESCUBRE LA POLÍTICA
+        ====================================== -->
+
+        <section class="seccion" id="analisis">
+
+            <h2 class="seccion-titulo">
+                🔎 Descubre la política
+            </h2>
+
+
+            <div class="informacion">
+
+                <h3>
+                    ¿Qué es la política?
+                </h3>
+
+                <p>
+                    La política es la manera en que una sociedad
+                    organiza sus decisiones y busca solucionar
+                    los problemas que afectan a la comunidad.
+                </p>
+
+
+                <br>
+
+
+                <h3>
+                    🏛️ ¿Dónde está presente?
+                </h3>
+
+                <p>
+                    La política está presente en temas que hacen
+                    parte de nuestra vida cotidiana, como la
+                    educación, la salud, el transporte, el medio
+                    ambiente, la seguridad y los servicios públicos.
+                </p>
+
+
+                <br>
+
+
+                <h3>
+                    🗳️ ¿Qué tiene que ver la democracia?
+                </h3>
+
+                <p>
+                    La democracia permite que los ciudadanos
+                    participen en las decisiones de la sociedad.
+                    En Colombia existen diferentes mecanismos de
+                    participación ciudadana, como el voto, el
+                    referendo, el plebiscito, la consulta popular,
+                    el cabildo abierto y la revocatoria del mandato.
+                </p>
+
+
+                <br>
+
+
+                <h3>
+                    👥 ¿Por qué es importante la ciudadanía?
+                </h3>
+
+                <p>
+                    Ser ciudadano significa conocer nuestros
+                    derechos y deberes, informarnos, expresar
+                    nuestras opiniones, respetar las opiniones
+                    de los demás y participar responsablemente
+                    en nuestra comunidad.
+                </p>
+
+
+                <br>
+
+
+                <h3>
+                    💡 La idea de nuestro proyecto
+                </h3>
+
+                <p>
+                    <strong>
+                        “La política es mi cuento”
+                    </strong>
+
+                    es una revista digital creada para que los
+                    estudiantes puedan acercarse a la política
+                    de una manera sencilla, clara y llamativa.
+
+                    Nuestro objetivo es aprender sobre democracia,
+                    elecciones y ciudadanía, entendiendo que la
+                    política no es un tema lejano, sino algo que
+                    está relacionado con nuestra vida diaria.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             DEMOCRACIA
+        ====================================== -->
+
+        <section class="seccion" id="democracia">
+
+            <h2 class="seccion-titulo">
+                🗳️ Democracia
+            </h2>
+
+
+            <div class="informacion contenido-imagen">
+
+
+                <img
+                    src="imagenes/Democracia.png"
+                    alt="Personas participando en una democracia"
+                >
+
+
+                <div>
+
+                    <h3>
+                        ¿Qué es la democracia?
+                    </h3>
+
+                    <p>
+                        La democracia es una forma de organización
+                        política en la que los ciudadanos tienen la
+                        posibilidad de participar en las decisiones
+                        de la sociedad.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        La participación puede realizarse mediante
+                        el voto y otros mecanismos establecidos para
+                        que los ciudadanos puedan expresar sus ideas
+                        y tomar parte en asuntos públicos.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Por eso, informarse y participar de manera
+                        responsable es importante para una sociedad
+                        democrática.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             ELECCIONES
+        ====================================== -->
+
+        <section class="seccion" id="elecciones">
+
+            <h2 class="seccion-titulo">
+                📊 Elecciones
+            </h2>
+
+
+            <div class="informacion contenido-imagen">
+
+
+                <div>
+
+                    <h3>
+                        ¿Qué son las elecciones?
+                    </h3>
+
+                    <p>
+                        Las elecciones son procesos mediante los
+                        cuales los ciudadanos pueden elegir a sus
+                        representantes mediante el voto.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Antes de participar es importante conocer
+                        las propuestas, comparar diferentes opciones
+                        y tomar una decisión de manera responsable.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        El voto es una de las principales formas de
+                        participación ciudadana dentro de una
+                        democracia.
+                    </p>
+
+                </div>
+
+
+                <img
+                    src="imagenes/elecciones.png"
+                    alt="Personas participando en elecciones"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CIUDADANÍA
+        ====================================== -->
+
+        <section class="seccion" id="ciudadania">
+
+            <h2 class="seccion-titulo">
+                👥 Ciudadanía
+            </h2>
+
+
+            <div class="informacion contenido-imagen">
+
+
+                <img
+                    src="imagenes/Ciudadania.png"
+                    alt="Personas participando en su comunidad"
+                >
+
+
+                <div>
+
+                    <h3>
+                        ¿Qué significa ser ciudadano?
+                    </h3>
+
+                    <p>
+                        Ser ciudadano significa formar parte de
+                        una sociedad y tener derechos y deberes.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        También significa participar en nuestra
+                        comunidad, respetar a los demás, conocer
+                        nuestras responsabilidades y contribuir
+                        al bienestar común.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        La ciudadanía no solamente consiste en
+                        votar. También podemos participar
+                        informándonos, expresando nuestras ideas,
+                        escuchando a los demás y cuidando los
+                        espacios que compartimos.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CONCLUSIÓN
+        ====================================== -->
+
+        <section class="seccion" id="conclusion">
+
+            <h2 class="seccion-titulo">
+                ✅ Conclusión
+            </h2>
+
+
+            <div class="informacion">
+
+                <h3>
+                    ¿Qué aprendimos?
+                </h3>
+
+                <p>
+                    Con este proyecto aprendimos que la política
+                    hace parte de nuestra vida cotidiana y que no
+                    es un tema exclusivo de los adultos. La
+                    democracia permite que los ciudadanos participen
+                    en las decisiones de la sociedad, mientras que
+                    las elecciones son una forma de elegir
+                    representantes mediante el voto.
+                </p>
+
+
+                <br>
+
+
+                <p>
+                    También comprendimos que ser ciudadano significa
+                    conocer nuestros derechos y deberes, informarnos,
+                    respetar las diferentes opiniones y participar
+                    de manera responsable en nuestra comunidad.
+                </p>
+
+
+                <br>
+
+
+                <p>
+                    En conclusión, <strong>“La política es mi cuento”</strong>
+                    busca demostrar que conocer la política nos
+                    ayuda a entender mejor nuestra sociedad y a
+                    participar en ella de forma responsable.
+                    Informarnos, opinar y participar son acciones
+                    que pueden contribuir a construir una mejor
+                    comunidad.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             GLOSARIO
+        ====================================== -->
+
+        <section class="seccion" id="glosario">
+
+            <h2 class="seccion-titulo">
+                📚 Glosario político
+            </h2>
+
+
+            <div class="glosario">
+
+
+                <div class="concepto">
+
+                    <h3>
+                        🗳️ Democracia
+                    </h3>
+
+                    <p>
+                        Forma de organización política en la que
+                        los ciudadanos participan en las decisiones
+                        de la sociedad.
+                    </p>
+
+                </div>
+
+
+                <div class="concepto">
+
+                    <h3>
+                        👤 Ciudadanía
+                    </h3>
+
+                    <p>
+                        Condición de formar parte de una sociedad
+                        y participar en sus asuntos, teniendo
+                        derechos y deberes.
+                    </p>
+
+                </div>
+
+
+                <div class="concepto">
+
+                    <h3>
+                        📊 Elecciones
+                    </h3>
+
+                    <p>
+                        Proceso mediante el cual los ciudadanos
+                        eligen a sus representantes.
+                    </p>
+
+                </div>
+
+
+                <div class="concepto">
+
+                    <h3>
+                        📜 Constitución
+                    </h3>
+
+                    <p>
+                        Norma fundamental que establece la
+                        organización y funcionamiento de un Estado.
+                    </p>
+
+                </div>
+
+
+                <div class="concepto">
+
+                    <h3>
+                        🏛️ Gobierno
+                    </h3>
+
+                    <p>
+                        Conjunto de instituciones encargadas de
+                        dirigir y administrar un Estado.
+                    </p>
+
+                </div>
+
+
+                <div class="concepto">
+
+                    <h3>
+                        🤝 Participación
+                    </h3>
+
+                    <p>
+                        Acción de involucrarse en asuntos que
+                        afectan a una comunidad.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CONTACTO
+        ====================================== -->
+
+        <section class="seccion" id="contacto">
+
+            <h2 class="seccion-titulo">
+                📩 ¡Queremos conocer tu opinión!
+            </h2>
+
+
+            <div class="contacto">
+
+
+                <form id="formulario">
+
+
+                    <label for="nombre">
+                        Nombre
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Escribe tu nombre"
+                        required
+                    >
+
+
+                    <label for="correo">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="correo"
+                        placeholder="ejemplo@correo.com"
+                        required
+                    >
+
+
+                    <label for="mensaje">
+                        Tu opinión
+                    </label>
+
+                    <textarea
+                        id="mensaje"
+                        placeholder="¿Qué piensas sobre nuestro proyecto?"
+                        required
+                    ></textarea>
+
+
+                    <button type="submit">
+                        🚀 ENVIAR MI OPINIÓN
+                    </button>
+
+
+                    <div id="respuesta">
+                        ✅ ¡Gracias por compartir tu opinión!
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================
+         PIE DE PÁGINA
+    ====================================== -->
+
+    <footer>
+
+        <h2>
+            🗳️ La política es mi cuento
+        </h2>
+
+        <p>
+            Revista Digital Ciudadana · 2026
+        </p>
+
+        <p>
+            Aprende · Participa · Opina
+        </p>
+
+    </footer>
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script>
+
+        const formulario =
+            document.getElementById("formulario");
+
+        const respuesta =
+            document.getElementById("respuesta");
+
+
+        formulario.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            respuesta.style.display = "block";
+
+            formulario.reset();
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
